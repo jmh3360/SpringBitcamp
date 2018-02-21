@@ -12,7 +12,7 @@ import com.bitcamp.web.enums.Action;
 import com.bitcamp.web.enums.Enums.TABLE;
 
 import lombok.Data;
-
+//
 @Data
 public class Command  {
 	protected String dir,page,search,column,cmd,data,view;
