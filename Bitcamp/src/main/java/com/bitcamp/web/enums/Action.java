@@ -1,12 +1,12 @@
 package com.bitcamp.web.enums;
 
 public enum Action {
-	MOVE,ADD,LOGIN,JOIN,SEARCH,UPDATE_PASS,DELETE,BANK_BOOK,OPEN_PHONE,
+	MOVE,ADD,LOGIN,JOIN,SEARCH,LEAVE_MEMBER,INSERT_MEMBER,
+	OPEN_ACCOUNT,OPEN_PHONE,MYPAGE,LOGOUT,
 	VIEW{
 		@Override
 		public String toString() {
-			// TODO Auto-generated method stub
-			return "/WEB-INF/view/";
+			return "/WEB-INF/views/";
 		}
 	},
 	EXTENSION{
@@ -18,9 +18,7 @@ public enum Action {
 	SEPARATOR{
 		@Override
 		public String toString() {
-			
 			return "/";
 		}
-	}, LOGOUT, MYPAGE
-	
+	}
 }

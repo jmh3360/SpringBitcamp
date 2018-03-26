@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bitcamp.web.mapperImpl.AccountMapperImpl">
+	<insert id="insertAccount" parameterType="cmd"></insert>
+	<update id="updateAccount" parameterType="cmd"></update>
+	<delete id="deleteAccount" parameterType="cmd"></delete>
+	<select id="selectAll" resultType="account"></select>
+	<select id="selectByName" resultType="account"></select>
+	<select id="selectById" resultType="account"></select>
+	<select id="selectCount" resultType="account"></select>
+</mapper>

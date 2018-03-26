@@ -1,5 +1,6 @@
 package com.bitcamp.web.enums;
 
 public enum Table {
-	ATTEND,KAKAO,MEMBER,MOBILE
+	MEMBER, ATTEND, ACCOUNT,MOBILE, board
+	
 }

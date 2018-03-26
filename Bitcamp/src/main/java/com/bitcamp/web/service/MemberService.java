@@ -1,11 +1,23 @@
 package com.bitcamp.web.service;
 
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+
 import com.bitcamp.web.command.Command;
-import com.bitcamp.web.command.ResultMap;
 import com.bitcamp.web.domain.MemberDTO;
 
+@Component
 public interface MemberService {
-	public ResultMap findById (MemberDTO m);
-	public ResultMap join(MemberDTO bean);
-	public ResultMap login(Command cmd);
+	public void addMember(Command cmd);
+	public MemberDTO findMemberById(Command cmd);
+	public boolean exist(Command cmd);
+	public void modifyMember(Command cmd);
+	public void removeMember(Command cmd);
+	public List<MemberDTO> list();
+	public List<MemberDTO> findByName(Command cmd);
+	public MemberDTO findById(Command cmd);
+	public int count();
+
+
 }

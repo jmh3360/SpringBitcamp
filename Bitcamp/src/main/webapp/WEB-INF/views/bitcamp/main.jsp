@@ -1,118 +1,59 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-	<%@ include file="../common/header.jsp"%>
-<%@ include file="../common/nav.jsp"%>
-<link rel="stylesheet" href="${css}/bitcamp.css" />
-<div id ="wrapper">
-<h2> 비트 캠프 메인</h2>
-<section>
-	<form id = "bitcamp_form" action="result.jsp">
 <article>
-<table id="mypage_table">
-<tr>
-	<td rowspan="4"></td>
-	<td class="column">id</td>
-	<td>${sessionScope.user.id}</td>
-	<td class="column">생년월일</td>
-	<td>${sessionScope.user.ssn}</td>
-</tr>
-<tr>
-	<td class="column">pass</td>
-	<td>${sessionScope.user.pass}</td>
-	<td class="column">전화번호</td>
-	<td>${sessionScope.user.phone}</td>
-</tr>
-<tr>
-	<td class="column">이름</td>
-	<td>${sessionScope.user.name}</td>
-	<td class="column">email</td>
-	<td>${sessionScope.user.email}</td>
-</tr>
-<tr>
-	<td class="column">성별</td>
-	<td>성별 값</td>
-	<td class="column">주소</td>
-	<td>${sessionScope.user.addr}</td>
-</tr>
-</table>
+	<table >
+  		<tr>
+  			<td>상 태</td>
+  			<td>월요일</td>
+  			<td>화요일</td>
+  			<td>수요일</td>
+  			<td>목요일</td>
+  			<td>금요일</td>
+  			
+  		</tr>
+  		<tr>
+  			<td>결석</td>
+  			<td><input type="radio" name="monday" value="absent" checked/></td>
+  			<td><input type="radio" name="tuesday" value="absent" checked/></td>
+  			<td><input type="radio" name="wednesday" value="absent" checked/></td>
+  			<td><input type="radio" name="thursday" value="absent" checked/></td>
+  			<td><input type="radio" name="friday" value="absent" checked/></td>
+  		</tr>
+  		<tr>
+  			<td>지각</td>
+  			<td><input type="radio" name="monday" value="late" /></td>
+  			<td><input type="radio" name="tuesday" value="late"/></td>
+  			<td><input type="radio" name="wednesday" value="late"/></td>
+  			<td><input type="radio" name="thursday" value="late"/></td>
+  			<td><input type="radio" name="friday" value="late"/></td>
+  		</tr>
+  		<tr>
+  			<td>조퇴</td>
+  			<td><input type="radio" name="monday" value="early_leave"/></td>
+  			<td><input type="radio" name="tuesday" value="early_leave"/></td>
+  			<td><input type="radio" name="wednesday" value="early_leave"/></td>
+  			<td><input type="radio" name="thursday" value="early_leave"/></td>
+  			<td><input type="radio" name="friday" value="early_leave"/></td>
+  		</tr>
+  		<tr>
+  			<td>출석</td>
+  			<td><input type="radio" name="monday" value="attend"/></td>
+  			<td><input type="radio" name="tuesday" value="attend"/></td>
+  			<td><input type="radio" name="wednesday" value="attend"/></td>
+  			<td><input type="radio" name="thursday" value="attend"/></td>
+  			<td><input type="radio" name="friday" value="attend"/></td>
+  		</tr>
+  		<tr style="">
+  			<td>결과</td>
+  			<td><input type="text" name="result"/></td>
+  			<td><input type="text" name="result"/></td>
+  			<td><input type="text" name="result"/></td>
+  			<td><input type="text" name="result"/></td>
+  			<td><input type="text" name="result"/></td>
+  		</tr>
+  		
+  	</table>
+	
 </article>
-<table >
-
-	<tr>
-		<th>이름</th>
-		<th>월</th>
-		<th>화</th>
-		<th>수</th>
-		<th>목</th>
-		<th>금</th>
-		<th>결과</th>
-	</tr>
-	<tr>
-		<td></td>
-		<td >
-		<select id ="monday" >
-		<option value="">결석</option>
-		<option value="">출석</option>
-		<option value="">지각</option>
-		<option value="">조퇴</option>
-		</select></td>
-		<td >
-		<select id ="tuseday">
-		<option value="">결석</option>
-		<option value="">출석</option>
-		<option value="">지각</option>
-		<option value="">조퇴</option>
-		</select></td>
-		<td >
-		<select id ="wednesday">
-		<option value="">결석</option>
-		<option value="">출석</option>
-		<option value="">지각</option>
-		<option value="">조퇴</option>
-		</select></td>
-		<td >
-		<select id ="thursday">
-		<option value="">결석</option>
-		<option value="">출석</option>
-		<option value="">지각</option>
-		<option value="">조퇴</option>
-		</select></td>
-		<td >
-		<select id ="friday">
-		<option value="">결석</option>
-		<option value="">출석</option>
-		<option value="">지각</option>
-		<option value="">조퇴</option>
-		</select></td>
-		
-		<td> 		</td>
-	</tr>
-	<tr>
-	
-	<td id ="bitcamp_attendance_btn_box" colspan="7"><button id ="bitcamp_attendance_btn" style="">확인</button>
-	
-	</td>
-	</tr>
-	</table>
-	<input name ="id" value="jmh3360" type="hidden"  />
-	</form>
-	<button id ="bitcamp_passupdate_btn" >비밀번호 변경</button>
-	<button id ="bitcamp_delete_btn" >회원 삭제</button>
-
-</section>
-</div>
-<aside> </aside>
-<%@ include file="../common/footer.jsp"%>
 </body>
-<script>
-	document.querySelector("#bitcamp_passupdate_btn").addEventListener('click',function(){
-		alert("비밀번호 변경하시겠습니까?");
-		location.href = "${ctx}/user.do?cmd=move&dir=bitcamp&page=update_pass"},false);
-	
-	document.querySelector('#bitcamp_delete_btn').addEventListener('click',function(){
-		alert('정말 삭제할겁니까?'); 
-		location.href = "${ctx}/user.do?cmd=delete"},false);
-	
-	document.querySelector('#kakao').addEventListener('click',function(){
-		location.href = "${ctx}/user.do?cmd=move&dir=kakao&page=main";
-	},false);
-	</script>
+
+</html>

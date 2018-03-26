@@ -1,33 +1,31 @@
 package com.bitcamp.web.command;
 
-import java.util.Map;
-
+import org.springframework.stereotype.Component;
 import com.bitcamp.web.domain.AccountDTO;
-import com.bitcamp.web.domain.AttendDTO;
+import com.bitcamp.web.domain.BoardDTO;
 import com.bitcamp.web.domain.FoodDTO;
 import com.bitcamp.web.domain.LottoDTO;
 import com.bitcamp.web.domain.MemberDTO;
-import com.bitcamp.web.domain.MobileDTO;
+import com.bitcamp.web.domain.PhoneDTO;
+import com.bitcamp.web.domain.TxDTO;
 import com.bitcamp.web.enums.Action;
-import com.bitcamp.web.enums.Enums.TABLE;
+import com.bitcamp.web.enums.Table;
 
 import lombok.Data;
-//
-//
+
 @Data
-public class Command  {
-	protected String dir,page,search,column,cmd,data,view;
+@Component
+public class Command{
+	protected String cmd,dir,page,view,column,data;
 	protected Action action;
-	protected Map<?, ?> cmap;
-	protected TABLE table;
+	protected Table table;
 	protected MemberDTO member;
 	protected AccountDTO account;
-	protected AttendDTO attend;
+	protected BoardDTO attend;
 	protected LottoDTO lotto;
 	protected FoodDTO food;
-	protected MobileDTO mobile;
-
-	
-	}
-
-
+	protected PhoneDTO phone;
+	protected TxDTO tx;
+	protected BoardDTO board;
+	protected Page paging;
+}
